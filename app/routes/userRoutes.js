@@ -45,12 +45,40 @@ router.post('/signin', async (req, res, next) => {
     }
 });
 
-router.get('/recommendation', async (req, res, next) => {
+router.get('/recommendation', userController.validateToken, async (req, res, next) => {
+    try {
+        const reqBody = req.body;
+        const mandatoryFields = ['genre'];
+        for (let f of mandatoryFields) {
+            if (!reqBody[f]) {
+                return res.status(403).json({ message: `Mandatory field missing: ${f}` });
+            }
+        }
 
+        const result = await userController.getRecommendations();
+        return res.status(200).json({ result });
+
+    } catch (error) {
+        next(error);
+    }
 });
 
-router.put('/genre', async (req, res, next) => {
+router.put('/genre', userController.validateToken, async (req, res, next) => {
+    try {
+        const reqBody = req.body;
+        const mandatoryFields = ['genre'];
+        for (let f of mandatoryFields) {
+            if (!reqBody[f]) {
+                return res.status(403).json({ message: `Mandatory field missing: ${f}` });
+            }
+        }
 
+        const result = await userController.setFavouriteGenre(reqBody.genre);
+        return res.status(200).json({ success: true });
+
+    } catch (error) {
+        next(error);
+    }
 });
 
 module.exports = router;
