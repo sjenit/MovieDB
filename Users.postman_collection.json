@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "5fd3127f-6c7a-47d9-abf1-27504ccb46e0",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"jenit2\",\n    \"password\": \"jenitshah2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}/users/register",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"jenit2\",\n    \"password\": \"jenitshah2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env_url}}/users/signin",
+					"host": [
+						"{{env_url}}"
+					],
+					"path": [
+						"users",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get recommendations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_url}}/user/recommendation",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"user",
+						"recommendation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set favourite genre",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"genre\": \"Action\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}/user/genre",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"user",
+						"genre"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

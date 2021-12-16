@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "b95c0456-a7c1-4827-a35a-7f367bba6d09",
+		"name": "Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{env_url}}/movies?genre=testgenre",
+					"host": [
+						"{{env_url}}"
+					],
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "testgenre"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_url}}/movies/56623c9e-458f-46a5-b0c1-6d5993fac522",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"movies",
+						"56623c9e-458f-46a5-b0c1-6d5993fac522"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFlNmFlODM4LTk5MGEtNGUzNS1iMmZkLWQ3YWFmYWI3ZDgwZiIsInVzZXJuYW1lIjoiamVuaXQyIiwicGFzc3dvcmQiOiIkMmEkMTAkS0FGQ0FpZW8wQVoxOTNkaTVuY1pPLkk0OGpXZ2UvbUx1R0tNM3A1Lzd4eFdsVjV1bTFrbWEiLCJmYXZvdXJpdGVfZ2VucmUiOm51bGwsImlhdCI6MTYzOTY0OTYzNiwiZXhwIjoxNjM5NjkyODM2fQ.BY7XE3lxevgueUgb5WuBXyG9rMyE2I3O469k0i5U1lI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"movie1\",\n    \"genre\": \"g1\",\n    \"release_date\": \"2021-16-12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}/movies",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upvote movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}/movies/1e6ae838-990a-4e35-b2fd-d7aafab7d80f/upvote",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"movies",
+						"1e6ae838-990a-4e35-b2fd-d7aafab7d80f",
+						"upvote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Downvote movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}/movies/1e6ae838-990a-4e35-b2fd-d7aafab7d80f/upvote",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"movies",
+						"1e6ae838-990a-4e35-b2fd-d7aafab7d80f",
+						"upvote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"review\": \"Really good movie...\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}/movies/1e6ae838-990a-4e35-b2fd-d7aafab7d80f/review",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"movies",
+						"1e6ae838-990a-4e35-b2fd-d7aafab7d80f",
+						"review"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
